@@ -1,0 +1,134 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu-main{
+  margin: 0 auto;
+  max-width: 1180px;
+  width: 100%;
+}
+
+/* 검색창 디자인 */
+
+.search{
+  padding: 25px 40px;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-detail{
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-detail-input{
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.search-detail-input input{
+  border: none;
+  width: 80%;
+  height: 100%;
+}
+
+.search-detail-input button{
+  width: 34px;
+  height: 38px;
+  background: url(https://ediya.com/images/common/icon_search.gif) no-repeat 10px center;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-detail-bar{
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.search-detail-check{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-detail-check input{
+  width: 15px;
+}
+
+/* 메뉴들 디자인 */
+
+.menus{
+  margin-top: 40px;
+}
+
+.menus1{
+  display: flex;
+  gap: 10px;
+  text-align: center;
+}
+
+.menus2{
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+  text-align: center;
+}
+
+.menus1-box{
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 30px 0px;
+}
+
+.menus1-box img{
+  width: 268px;
+  height: 268px;
+  margin: 30px 0px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.menus1-box img:hover{
+  transform: scale(1.05,1.05);
+}
+
+.menus1-box p{
+  width: 100%;
+  margin-bottom: 60px;
+  color: rgb(90, 90, 90);
+}
+
+/* 더보기 디자인 */
+
+.more-btn{
+  width: 100%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.more-btn button{
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+  margin: 0px auto;
+  font-size: 16px;
+}
+
+.more-btn button:hover{
+  cursor: pointer;
+}
+
+.more-btn span{
+  margin-left: 15px;
+}
