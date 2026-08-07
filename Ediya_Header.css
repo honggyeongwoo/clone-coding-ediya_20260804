@@ -19,6 +19,7 @@ a {
   padding: 0;
 }
 
+/* header 전체 구역 */
 .wrap-header{
     width: 1600px;
     height: 450px;
@@ -28,6 +29,7 @@ a {
     
 }
 
+/* header 파란색 nav bar */
 .nav-bar{
     height: 40px;
     display:flex ;
@@ -36,12 +38,13 @@ a {
     /* color: white; 여긴 div공간이라 색상 줘도 변경되는 곳 없음*/
   }
 
-
-
-.nav-bar a{
-  color: white;
-  font-size: 10px;
-  /* a태그의 내용이기 때문에 li에 색상줘도 적용 안됨*/
+.nav-bar a {
+    /* a태그의 내용이기 때문에 li에 색상줘도 적용 안됨*/
+    color: white;
+    font-size: 10px;
+    display: flex;          /* ⭐ 아이콘이나 텍스트 완벽한 수직 정렬 */
+    align-items: center;
+    height: 100%;
 }
 
 .nav-bar-left ul {
@@ -54,7 +57,7 @@ a {
 .nav-bar-left ul li {
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: center; /* 텍스트 수직 가운데 */
 }
 
 .nav-bar-left .on a {
@@ -93,13 +96,7 @@ a {
     height: 100%;
 }
 
-.nav-bar a {
-    color: white;
-    font-size: 10px;
-    display: flex;          /* ⭐ 아이콘이나 텍스트 완벽한 수직 정렬 */
-    align-items: center;
-    height: 100%;
-}
+
 
 /* 검색창 영역 수직 정렬 추가 */
 .nav-search {
@@ -121,6 +118,7 @@ a {
     cursor: pointer;
 }
 
+/* 로고 및 언어 버튼 부분 */
 .menu-banner {
   width: 60%;
   height: 80px;
@@ -132,6 +130,7 @@ a {
 .banner-left,
 .banner-logo,
 .language-box {
+  /* 균등 분배해서 로고 중앙, 언어 버튼 우측 */
   flex: 1;
 }
 
