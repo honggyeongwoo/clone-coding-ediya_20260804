@@ -6,20 +6,24 @@ function App() {
 
   return (
     <>
-      {/* 은호 */}
-      <div>
+
+    {/* 경우 header */}
+    <div>
+
+    </div>
+
+    {/* 은호 main */}
+    <div>  
+
+    </div>
+
+    {/* 현호 footer */}
+    <div>
+
+    </div>
 
         
-      {/* 경우 */}
-      <div>
-
-        
-        
-      {/* 현호 */}
-      <div>
-
-        
-      </div>
+    
     </>
   )
 }
