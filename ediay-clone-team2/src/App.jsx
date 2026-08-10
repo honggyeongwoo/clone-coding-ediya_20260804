@@ -13,8 +13,8 @@ function App() {
     </div>
 
     {/* 은호 main */}
-    <div>  
-
+    <div>
+      
     </div>
 
     {/* 현호 footer */}
