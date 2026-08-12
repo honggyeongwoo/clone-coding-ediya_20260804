@@ -1,0 +1,26 @@
+/* 2026/08/05 */
+/* css 파일 */
+
+/* 로고 및 언어 버튼 부분 */
+.menu-banner {
+  width: 60%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.banner-left,
+.banner-logo,
+.language-box {
+  /* 균등 분배해서 로고 중앙, 언어 버튼 우측 */
+  flex: 1;
+}
+
+.banner-logo {
+  text-align: center;
+}
+
+.language-box {
+  text-align: right;
+}

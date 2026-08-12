@@ -1,0 +1,27 @@
+/* 2026/08/05 */
+/* css 파일 */
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+
+.menu-category {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 0;
+  
+}
+
+.menu-category a{
+  color: black;
+}
+
+.menu-category ul a{
+  color: gray;
+}
+

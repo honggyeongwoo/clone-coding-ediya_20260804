@@ -9,7 +9,7 @@ function App() {
 
     {/* 경우 header */}
     <div>
-
+    
     </div>
 
     {/* 은호 main */}
