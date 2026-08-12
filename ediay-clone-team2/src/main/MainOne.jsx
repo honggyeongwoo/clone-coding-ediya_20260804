@@ -1,4 +1,7 @@
 import React from 'react'
+import MainDrink from './MainComponent/MainDrink'
+import MainFood from './MainComponent/MainFood'
+import MainMD from './MainComponent/MainMD'
 
 export default function MainOne() {
   return (
@@ -9,9 +12,9 @@ export default function MainOne() {
         <h3>ALWAYS BESIDE YOU, <span>EDIYA BAKERY</span></h3>
         <br /><br />
         <ul>
-          <li>음료</li>
-          <li>푸드</li>
-          <li>MD</li>
+          <li><MainDrink /></li>
+          <li><MainFood /></li>
+          <li><MainMD /></li>
         </ul>
       </div>
     </section>
