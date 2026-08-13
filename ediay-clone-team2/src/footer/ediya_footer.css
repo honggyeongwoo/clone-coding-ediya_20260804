@@ -1,18 +1,19 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 
-.menu-main{
+.menu-main {
   margin: 0 auto;
   max-width: 1180px;
   width: 100%;
+  padding: 0 15px;
 }
 
 /* 검색창 디자인 */
 
-.search{
+.search {
   padding: 25px 40px;
   display: flex;
   border: 1px solid #ccc;
@@ -21,114 +22,162 @@
   gap: 15px;
 }
 
-.search-detail{
+.search-detail {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.search-detail-input{
+.search-detail-input {
   height: 38px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  display: flex;
+  min-width: 200px;
 }
 
-.search-detail-input input{
+.search-detail-input input {
   border: none;
-  width: 80%;
+  width: 100%;
   height: 100%;
+  padding: 0 10px;
+  outline: none;
 }
 
-.search-detail-input button{
+.search-detail-input button {
   width: 34px;
   height: 38px;
-  background: url(https://ediya.com/images/common/icon_search.gif) no-repeat 10px center;
-  float: right;
+  background: url(https://ediya.com/images/common/icon_search.gif) no-repeat center;
   border: none;
   outline: none;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.search-detail-bar{
+.search-detail-bar {
   width: 100%;
   height: 1px;
   background-color: #ccc;
 }
 
-.search-detail-check{
+.search-detail-check {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
-.search-detail-check input{
+.search-detail-check label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.search-detail-check input {
   width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
 
-/* 메뉴들 디자인 */
+/* 메뉴 Grid 반응형 디자인 (1줄에 4개씩) */
 
-.menus{
+.menus {
   margin-top: 40px;
 }
 
-.menus1{
-  display: flex;
+.menus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 데스크톱 기본: 1줄에 4개 */
   gap: 10px;
-  text-align: center;
 }
 
-.menus2{
-  display: flex;
-  margin-top: 10px;
-  gap: 10px;
-  text-align: center;
-}
-
-.menus1-box{
-  flex: 1;
+.menu-box {
   background-color: #f0f0f0;
-  padding: 30px 0px;
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
 }
 
-.menus1-box img{
-  width: 268px;
-  height: 268px;
-  margin: 30px 0px;
+.menu-box img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 268px;
+  height: auto;
+  object-fit: contain;
+  margin: 20px 0;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
-.menus1-box img:hover{
-  transform: scale(1.05,1.05);
+.menu-box img:hover {
+  transform: scale(1.05);
 }
 
-.menus1-box p{
+.menu-box p {
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   color: rgb(90, 90, 90);
+  font-size: 15px;
+  word-break: keep-all;
 }
 
-/* 더보기 디자인 */
+.no-result {
+  text-align: center;
+  padding: 60px 0;
+  color: #888;
+  font-size: 16px;
+}
 
-.more-btn{
+/* 더보기 버튼 디자인 */
+
+.more-btn {
   width: 100%;
-  margin: 80px auto;
+  margin: 60px auto;
   text-align: center;
 }
 
-.more-btn button{
+.more-btn button {
   background-color: white;
   border: 1px solid gray;
   border-radius: 20px;
   width: 200px;
   height: 40px;
-  margin: 0px auto;
+  margin: 0 auto;
   font-size: 16px;
-}
-
-.more-btn button:hover{
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.more-btn span{
-  margin-left: 15px;
+.more-btn span {
+  margin-left: 10px;
+}
+
+/* 반응형 미디어 쿼리 */
+
+@media (max-width: 900px) {
+  /* 태블릿: 1줄에 2개씩 */
+  .menus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  /* 모바일: 1줄에 1개씩 */
+  .menus-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .search {
+    padding: 20px;
+  }
+  
+  .more-btn {
+    margin: 40px auto;
+  }
 }
