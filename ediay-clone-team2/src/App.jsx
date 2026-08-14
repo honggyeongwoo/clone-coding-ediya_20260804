@@ -1,6 +1,9 @@
 
 import './App.css'
 
+import EdiyaHeader from "./header/Ediya_header.jsx";
+
+
 function App() {
   
 
@@ -9,7 +12,7 @@ function App() {
 
     {/* 경우 header */}
     <div>
-    
+      <EdiyaHeader />
     </div>
 
     {/* 은호 main */}
