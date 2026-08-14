@@ -1,7 +1,10 @@
 
-import './App.css'
+// import './App.css'
+
+import MainHome from './main/MainHome'
 import MainOne from './main/MainOne'
 import MainTwo from './main/MainTwo'
+import '../src/main/App2.css';
 
 function App() {
   
@@ -16,8 +19,7 @@ function App() {
 
     {/* 은호 main */}
     <div>
-      <MainOne />
-      <MainTwo />
+      <MainHome/>
     </div>
 
     {/* 현호 footer */}
