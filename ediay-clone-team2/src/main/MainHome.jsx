@@ -7,6 +7,7 @@ export default function MainHome() {
   return (
     <div>
       <MainOne />
+      
       <MainTwo />
     </div>
   )
