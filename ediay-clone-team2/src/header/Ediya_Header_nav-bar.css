@@ -1,123 +1,170 @@
 /* 2026/08/05 */
-/* css 파일 */
+/* CSS 파일 */
 
-* { /* 기본 세팅 작업 */
-  box-sizing: border-box; 
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-ul{ /* 기본 세팅 작업 */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-a { /* 기본 세팅 작업 */
+a {
   text-decoration: none;
   margin: 0;
   padding: 0;
 }
 
-/* header 전체 구역 */
-.wrap-header{
-    width: 1600px;
-    height: 450px;
-    /* border: 2px solid red; */
-    margin: auto;  /* 페이지 중앙 정렬 */
-    
+/* Header 전체 영역 */
+.wrap-header {
+  width: 1600px;
+  height: 450px;
+  margin: 0 auto;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
-/* header 파란색 배경 nav bar */
-.nav-bar{
-    height: 50px; 
+/* -------------------------------------------------- */
+/* 상단 파란색 Nav Bar */
 
-    display:flex ;
-    justify-content: space-between; /* 좌우 밀착 정렬 */
+.nav-bar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #243c84;
+}
 
-    background-color: #243c84 ; /* div 배경 색상 */
-      align-items: center;
-
-
-    /* color: white; 여긴 div공간이라 색상 줘도 변경되는 곳 없음*/
-  }
-
-/* nav-bar 안의 모든 A태그 링크를 흰색으로 설정 */
-/* A태그는 자체의 색상을 가지고 있음, 직접 적용 해줘야 함. */
-
-/* list의 a태그 text가 세로 정렬이 안된거 해결 */
 .nav-bar li {
   display: flex;
   align-items: center;
 }
 
 .nav-bar a {
-  font-size: 13px;
   color: white;
+  font-size: 13px;
 }
-/* ---------------------------------------------------------------------------------------------------- */
-.nav-bar-left ul {
 
-  /* 그냥 nav-bar-left에 flex 줘도 변경 없음. ul-list는 ul에 flex 부여 해야함  */
+/* -------------------------------------------------- */
+/* Nav Bar 왼쪽 영역 */
+
+/* 변경: nav-bar의 높이를 전부 사용 */
+.nav-bar-left {
+  height: 100%;
+}
+
+.nav-bar-left ul {
   height: 100%;
   display: flex;
-  
-  padding: 5px 10px;
+  align-items: center;
 
-  align-items: center;  /* 텍스트 수직 가운데 */
-  gap: 20px;
+  /* 변경: 기존 padding과 gap 제거 */
+  padding: 0;
+  gap: 0;
 }
 
-.nav-bar-left li{
+.nav-bar-left li {
   width: auto;
-  /* flex : 1;  이걸쓰면 왜 두줄로 바뀌지 공간이 부족해서인거같긴 한데 왜 ?*/ 
-  padding: 5px 10px;
-  margin: 0px auto;
+  height: 100%;
+
+  /* 변경: 기존 padding과 margin 제거 */
+  padding: 0;
+  margin: 0;
 
   text-align: center;
 }
 
+/* 추가: a 태그가 li 영역을 꽉 채움 */
+.nav-bar-left li a {
+  height: 100%;
+  padding: 0 18px;
 
-/* ---------------------------------------------------------------------------------------------------- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+}
+
+/* 추가: 선택된 메뉴 */
+.nav-bar-left li.on a {
+  color: #243c84;
+  background-color: white;
+}
+
+/* -------------------------------------------------- */
+/* Nav Bar 오른쪽 영역 */
+
 .nav-bar-right {
-    display: flex;
-    gap: 20px; /* 오른쪽 그룹끼리 간격 */
-    align-items: center; /* ⭐ 부모에서 세로 정렬 보장 */
-    height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-bar-right ul {
-    display: flex;
-    gap: 14px; 
-    align-items: center; /* ⭐ ul 내부 아이템들 세로 가운데 정렬 */
-    height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.nav-util li{
+/* 유틸 메뉴 */
+.nav-util li {
   width: auto;
-  
-  /* flex : 1;  이걸쓰면 왜 두줄로 바뀌지 공간이 부족해서인거같긴 한데 왜 ?*/ 
   padding: 5px 10px;
 }
 
+/* SNS 메뉴 */
+.nav-sns li {
+  margin: 0 2px;
+}
 
 .nav-sns img {
   width: 20px;
   height: 20px;
-
-  display: block; /* 이걸 안쓰면 세로 정렬 명령을 부모단에 둬도 잔여여백?이 남아서 정렬이 안됨*/
+  display: block;
 }
 
-.nav-search{
+/* 검색 영역 */
+.nav-search {
   display: flex;
-  align-items: center;    /* 검색 input과 button 세로 정렬 */
+  align-items: center;
+  margin: 0 20px;
 }
 
-.nav-search input{
-  height: 30px;  
-}
-
-.nav-search button{
+.nav-search input {
   height: 30px;
+  border: 1px solid black;
+  border-right: none;
+}
+
+.nav-search button {
+  height: 30px;
+  border: 1px solid black;
+  border-left: none;
+}
+
+/* 기존 li의 긴 border 제거 */
+.nav-bar-left li:not(:last-child),
+.nav-util li:not(:last-child) {
+  position: relative;
+  border-right: none;
+}
+
+/* 짧은 구분선 */
+.nav-bar-left li:not(:last-child)::after,
+.nav-util li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  width: 1px;
+  height: 8px;
+
+  background-color: rgba(255, 255, 255, 0.4);
 }

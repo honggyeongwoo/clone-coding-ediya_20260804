@@ -1,19 +1,33 @@
 /* 2026/08/05 */
 /* css 파일 */
 
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
+.menu-header {
+  width: 80%;
+  margin: 0 auto; /* menu-header 자체를 가운데 정렬 */
 }
 
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-category > a {
+  display: inline-block;
+  padding: 15px 0 8px;
+
+  /* 밑줄 공간을 미리 확보 */
+  border-bottom: 3px solid transparent;
+
+  transition: border-color 0.3s ease;
+}
 
 .menu-category {
   display: block;
+  flex: 1;
+  min-width: 0;
   text-align: center;
-  text-decoration: none;
-  padding: 20px 0;
   
 }
 
@@ -25,3 +39,53 @@
   color: gray;
 }
 
+/* 하위 메뉴 기본 상태 */
+.sub {
+  max-height: 0;
+  margin-top: 0;
+
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition:
+    max-height 0.4s ease,
+    margin-top 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.sub a {
+  display: block;
+  padding: 4px 0;
+}
+
+/* menu에 hover하면 모든 sub가 아래로 펼쳐짐 */
+.menu:hover .sub {
+  max-height: 300px;
+  margin-top: 15px;
+
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 하위 메뉴 링크 */
+.sub a {
+  font-weight: 400;
+  transition:
+    color 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+/* 각각의 하위 메뉴 링크에 hover */
+.sub a:hover {
+  color: black;
+  font-weight: 700;
+}
+
+/* 현재 가리키는 카테고리의 제목에만 밑줄 표시 */
+.menu-category:hover > a {
+  border-bottom-color: black;
+}
