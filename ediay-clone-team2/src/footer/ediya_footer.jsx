@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ediya_footer.css';
+// import './ediya_footer.css';
 
 const 카테고리 = ['BREAD', 'DESSERT', 'DELI', 'RTE'];
 
