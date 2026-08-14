@@ -1,5 +1,6 @@
 
 import './App.css'
+import Ediya_footer from './footer/ediya_footer'
 
 function App() {
   
@@ -19,7 +20,7 @@ function App() {
 
     {/* 현호 footer */}
     <div>
-
+      <Ediya_footer />
     </div>
 
         
