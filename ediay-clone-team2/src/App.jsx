@@ -3,7 +3,6 @@ import './App.css'
 import Ediya_footer from './footer/ediya_footer'
 
 function App() {
-  
 
   return (
     <>
@@ -22,8 +21,6 @@ function App() {
     <div>
       <Ediya_footer />
     </div>
-
-        
     
     </>
   )

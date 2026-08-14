@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './ediya_footer.css';
+import './ediya_footer.css';
 
 const 카테고리 = ['BREAD', 'DESSERT', 'DELI', 'RTE'];
 
@@ -34,23 +34,23 @@ export default function Ediya_footer() {
 
   // 더보기 버튼 클릭 시 8개 추가
   const handleLoadMore = () => {
-    set초기메뉴((prev) => prev + 8);
+    set초기메뉴((e) => e + 8);
   };
 
   return (
-    <footer className="menu-main">
-      <div className="search">
-        <div className="search-detail">
+    <footer className="menu-main-hh">
+      <div className="search-hh">
+        <div className="search-detail-hh">
           <h3>메뉴 검색</h3>
-          <div className="search-detail-input">
+          <div className="search-detail-input-hh">
             <input
               type="text"
             />
             <button type="button"></button>
           </div>
         </div>
-        <div className="search-detail-bar"></div>
-        <div className="search-detail-check">
+        <div className="search-detail-bar-hh"></div>
+        <div className="search-detail-check-hh">
           {카테고리.map((cat) => (
             <label key={cat}>
               <input type="checkbox" /> {cat}
@@ -60,11 +60,11 @@ export default function Ediya_footer() {
       </div>
 
       {/* 메뉴 목록 (Grid 레이아웃) */}
-      <div className="menus">
+      <div className="menus-hh">
         {displayedMenus.length > 0 ? (
-          <div className="menus-grid">
+          <div className="menus-grid-hh">
             {displayedMenus.map((item) => (
-              <div key={item.id} className="menu-box">
+              <div key={item.id} className="menu-box-hh">
                 <img
                   src={item.img || 'https://via.placeholder.com/268?text=No+Image'}
                   alt={item.name || '메뉴 이미지'}
@@ -74,13 +74,13 @@ export default function Ediya_footer() {
             ))}
           </div>
         ) : (
-          <div className="no-result">검색 결과가 없습니다.</div>
+          <div className="no-result-hh">검색 결과가 없습니다.</div>
         )}
       </div>
 
       {/* 더보기 버튼 (남은 메뉴가 있을 때만 표시) */}
       {초기메뉴 < 전체메뉴.length && (
-        <div className="more-btn">
+        <div className="more-btn-hh">
           <button type="button" onClick={handleLoadMore}>
             더보기<span>+</span>
           </button>
