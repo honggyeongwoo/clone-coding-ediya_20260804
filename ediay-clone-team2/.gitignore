@@ -7,6 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+ediya_copy.css
+ediya_copy.jsx
 node_modules
 dist
 dist-ssr
