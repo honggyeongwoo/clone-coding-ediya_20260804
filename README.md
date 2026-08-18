@@ -4,7 +4,7 @@
 
 이디야 클론코딩 작업 git 입니다.
 
-기준 이디야 사이드 url : https://www.ediya.com/
+기준 이디야 사이드 url : https://www.ediya.com/contents/menu_intro.html
 
 1. 역할구분
 
@@ -21,12 +21,6 @@ feature/footer
 3. src/폴더 (header, main, footer)에 본인 작업 파일 (html,css,이미지) 보관
 혹시모를 중복 오류를 방지하기 위함 
 
-4. 최종 merge 단계에서 하나의 파일, 컴포넌트 등 분리 진행
 
-> 1주차
 
-개인 작업 후 8/7(금)에 리뷰 후 1 차 merge
-
-> 2주차
-
-8/11(화) 간단한 merge(위치에 맞게 끼워넣는 정도) 진행 예정
+*해당 프로젝트는 상업적 용도가 아닙니다.*
