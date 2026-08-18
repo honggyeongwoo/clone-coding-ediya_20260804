@@ -1,0 +1,170 @@
+/* 2026/08/05 */
+/* CSS 파일 */
+
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header 전체 영역 */
+.wrap-header {
+  width: 1600px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------- */
+/* 상단 파란색 Nav Bar */
+
+.nav-bar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #243c84;
+}
+
+.nav-bar li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar a {
+  color: white;
+  font-size: 13px;
+}
+
+/* -------------------------------------------------- */
+/* Nav Bar 왼쪽 영역 */
+
+/* 변경: nav-bar의 높이를 전부 사용 */
+.nav-bar-left {
+  height: 100%;
+}
+
+.nav-bar-left ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  /* 변경: 기존 padding과 gap 제거 */
+  padding: 0;
+  gap: 0;
+}
+
+.nav-bar-left li {
+  width: auto;
+  height: 100%;
+
+  /* 변경: 기존 padding과 margin 제거 */
+  padding: 0;
+  margin: 0;
+
+  text-align: center;
+}
+
+/* 추가: a 태그가 li 영역을 꽉 채움 */
+.nav-bar-left li a {
+  height: 100%;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+}
+
+/* 추가: 선택된 메뉴 */
+.nav-bar-left li.on a {
+  color: #243c84;
+  background-color: white;
+}
+
+/* -------------------------------------------------- */
+/* Nav Bar 오른쪽 영역 */
+
+.nav-bar-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar-right ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* 유틸 메뉴 */
+.nav-util li {
+  width: auto;
+  padding: 5px 10px;
+}
+
+/* SNS 메뉴 */
+.nav-sns li {
+  margin: 0 2px;
+}
+
+.nav-sns img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* 검색 영역 */
+.nav-search {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.nav-search input {
+  height: 30px;
+  border: 1px solid black;
+  border-right: none;
+}
+
+.nav-search button {
+  height: 30px;
+  border: 1px solid black;
+  border-left: none;
+}
+
+/* 기존 li의 긴 border 제거 */
+.nav-bar-left li:not(:last-child),
+.nav-util li:not(:last-child) {
+  position: relative;
+  border-right: none;
+}
+
+/* 짧은 구분선 */
+.nav-bar-left li:not(:last-child)::after,
+.nav-util li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  width: 1px;
+  height: 8px;
+
+  background-color: rgba(255, 255, 255, 0.4);
+}

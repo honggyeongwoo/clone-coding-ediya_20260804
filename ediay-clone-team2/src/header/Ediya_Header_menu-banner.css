@@ -1,0 +1,83 @@
+/* 2026/08/05 */
+/* css 파일 */
+
+/* 로고 및 언어 선택 전체 영역 */
+.menu-banner {
+  width: 60%;
+  height: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 왼쪽 빈 공간 / 로고 / 언어 영역 균등 분배 */
+.banner-left,
+.banner-logo,
+.language-box {
+  flex: 1;
+}
+
+/* 로고 가운데 정렬 */
+.banner-logo {
+  text-align: center;
+}
+
+/* 오른쪽 언어 영역 */
+.language-box {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 선택 언어와 목록의 바깥 너비 통일 */
+.language-button,
+.language-list {
+  width: 65px;
+  box-sizing: border-box;
+}
+
+/* 선택 언어와 목록 내용 모두 가운데 정렬 */
+.language-button,
+.language-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* 현재 선택된 언어 */
+.language-button {
+  padding: 3px 4px;
+}
+
+/* 국기 크기 */
+.language-box img {
+  width: 20px;
+  height: auto;
+  display: block;
+}
+
+/* 아래쪽 언어 목록 */
+.language-list {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  width: 65px;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 3px 4px;
+
+  border: 1px solid #ccc;
+  background-color: white;
+  z-index: 10;
+}
+
+.language-box.open .language-list {
+  display: block;
+}
