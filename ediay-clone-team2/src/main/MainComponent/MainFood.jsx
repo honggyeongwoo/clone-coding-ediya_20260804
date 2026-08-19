@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function MainFood() {
   return (
-    <div className='food'></div>
+    <div className='foodm'></div>
   )
 }
