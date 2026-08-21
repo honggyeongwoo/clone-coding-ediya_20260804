@@ -129,25 +129,23 @@
   right: 50px;
   
 }
-.Drinkm{
-  width: 1000px;
-  height: 1000px;
-  /* padding: 10px; */
-  background-image: url('MainComponent/drink.png');
+/* 음료/푸드/MD 스샷이미지 */
+.fullscreen-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: white; /* 뒤에 있는 내용 안 비치게 */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
 }
-.foodm{
-  width: 1000px;
-  height: 1000px;
-  /* padding: 10px; */
-  background-image: url('MainComponent/food.png');
-}
-.MDm{
-  width: 1000px;
-  height: 1000px;
-  /* padding: 10px; */
-  background-image: url('MainComponent/MD.png');
-}
-
+.Drinkm{ background-image: url('MainComponent/drink.png'); }
+.foodm{ background-image: url('MainComponent/food.png'); }
+.MDm{ background-image: url('MainComponent/MD.png'); }
 /* 
 ========================================================
 [반응형 웹 디자인 (Responsive Web Design) 미디어 쿼리]
