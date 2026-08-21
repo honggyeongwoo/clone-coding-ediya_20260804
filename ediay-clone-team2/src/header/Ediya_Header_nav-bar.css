@@ -1,5 +1,5 @@
 /* 2026/08/05 */
-/* CSS 파일 */
+/* Ediya_Header_nav-bar.css 파일 */
 
 /* 기본 설정 */
 * {
@@ -20,18 +20,19 @@ a {
   padding: 0;
 }
 
-/* Header 전체 영역 */
+/* 🟨 [수정] 1600px 고정 너비 제거: 모든 화면에서 가로 스크롤 방지 */
 .wrap-header {
-  width: 1600px;
-  height: 450px;
+  width: 100%;
+  min-height: 190px;
   margin: 0 auto;
+  background-color: white;
 }
 
-/* -------------------------------------------------- */
 /* 상단 파란색 Nav Bar */
-
 .nav-bar {
-  height: 50px;
+  min-height: 50px;
+  padding: 0 max(16px, calc((100% - 1600px) / 2));
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,36 +49,23 @@ a {
   font-size: 13px;
 }
 
-/* -------------------------------------------------- */
 /* Nav Bar 왼쪽 영역 */
-
-/* 변경: nav-bar의 높이를 전부 사용 */
 .nav-bar-left {
-  height: 100%;
+  height: 50px;
 }
 
 .nav-bar-left ul {
   height: 100%;
   display: flex;
   align-items: center;
-
-  /* 변경: 기존 padding과 gap 제거 */
-  padding: 0;
-  gap: 0;
 }
 
 .nav-bar-left li {
   width: auto;
   height: 100%;
-
-  /* 변경: 기존 padding과 margin 제거 */
-  padding: 0;
-  margin: 0;
-
   text-align: center;
 }
 
-/* 추가: a 태그가 li 영역을 꽉 채움 */
 .nav-bar-left li a {
   height: 100%;
   padding: 0 18px;
@@ -89,17 +77,16 @@ a {
   white-space: nowrap;
 }
 
-/* 추가: 선택된 메뉴 */
+/* 선택된 메뉴 */
 .nav-bar-left li.on a {
   color: #243c84;
   background-color: white;
 }
 
-/* -------------------------------------------------- */
 /* Nav Bar 오른쪽 영역 */
-
 .nav-bar-right {
-  height: 100%;
+  min-width: 0;
+  height: 50px;
   display: flex;
   align-items: center;
 }
@@ -114,6 +101,7 @@ a {
 .nav-util li {
   width: auto;
   padding: 5px 10px;
+  white-space: nowrap;
 }
 
 /* SNS 메뉴 */
@@ -135,25 +123,34 @@ a {
 }
 
 .nav-search input {
+  width: 150px;
   height: 30px;
+  padding: 0 8px;
   border: 1px solid black;
   border-right: none;
 }
 
 .nav-search button {
+  width: 34px;
   height: 30px;
   border: 1px solid black;
   border-left: none;
+  background-color: white;
+  cursor: pointer;
 }
 
-/* 기존 li의 긴 border 제거 */
+.nav-search button img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 짧은 구분선 */
 .nav-bar-left li:not(:last-child),
 .nav-util li:not(:last-child) {
   position: relative;
   border-right: none;
 }
 
-/* 짧은 구분선 */
 .nav-bar-left li:not(:last-child)::after,
 .nav-util li:not(:last-child)::after {
   content: "";
@@ -167,4 +164,65 @@ a {
   height: 8px;
 
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 🟩 [추가] 1200px 이하: 공간이 부족한 유틸 메뉴 일부 숨김 */
+@media (max-width: 1200px) {
+  .nav-util li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .nav-search {
+    margin: 0 10px;
+  }
+
+  .nav-search input {
+    width: 110px;
+  }
+}
+
+/* 🟩 [추가] 태블릿: SNS와 검색창을 숨기고 핵심 메뉴 유지 */
+@media (max-width: 1024px) {
+  .nav-bar-left li a {
+    padding: 0 12px;
+  }
+
+  .nav-sns,
+  .nav-search {
+    display: none;
+  }
+}
+
+/* 🟩 [추가] 모바일: 파란 영역에는 현재 브랜드 메뉴만 표시 */
+@media (max-width: 768px) {
+  .wrap-header {
+    min-height: 114px;
+  }
+
+  .nav-bar {
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .nav-bar-left,
+  .nav-bar-left ul {
+    width: 100%;
+    height: 40px;
+  }
+
+  .nav-bar-left li {
+    display: none;
+  }
+
+  .nav-bar-left li.on {
+    display: flex;
+  }
+
+  .nav-bar-left li.on a {
+    padding: 0 16px;
+  }
+
+  .nav-bar-right {
+    display: none;
+  }
 }

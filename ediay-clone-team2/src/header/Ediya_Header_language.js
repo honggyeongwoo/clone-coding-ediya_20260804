@@ -1,26 +1,47 @@
+// 2026/08/05
 // Ediya_Header_language.js
 
+// 🟨 [수정] DOM을 직접 찾지 않고 React state로 header 상태를 관리
+import { useState } from "react";
 
-const languageBox = document.querySelector(".language-box");
-const languageButton = document.querySelector(".language-button");
+export default function useEdiyaHeader() {
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-languageButton.addEventListener("click", function (event) {
-  event.preventDefault();
+  // 🟩 [추가] 언어 목록 열기/닫기
+  const handleLanguageClick = (event) => {
+    event.preventDefault();
+    setIsLanguageOpen((previous) => !previous);
+  };
 
-  languageBox.classList.toggle("open");
-});
+  // 🟨 [수정] querySelector 대신 클릭한 메뉴의 index를 state에 저장
+  const handleNavClick = (event, index) => {
+    event.preventDefault();
+    setActiveNav(index);
+  };
 
-const navItems = document.querySelectorAll(".nav-bar-left li");
+  // 🟩 [추가] 모바일 햄버거 메뉴 열기/닫기
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen((previous) => !previous);
+  };
 
-navItems.forEach(function (item) {
-  item.addEventListener("click", function () {
+  // 🟩 [추가] href="#" 링크가 화면 맨 위로 이동하지 않게 막음
+  const handleHeaderClick = (event) => {
+    const link = event.target.closest?.('a[href="#"]');
 
-    // 모든 li에서 on 제거
-    navItems.forEach(function (navItem) {
-      navItem.classList.remove("on");
-    });
+    if (link) {
+      event.preventDefault();
+    }
+  };
 
-    // 클릭한 li에만 on 추가
-    item.classList.add("on");
-  });
-});
+  return {
+    isLanguageOpen,
+    activeNav,
+    isMobileMenuOpen,
+    handleLanguageClick,
+    handleNavClick,
+    handleMobileMenuClick,
+    handleHeaderClick,
+  };
+}

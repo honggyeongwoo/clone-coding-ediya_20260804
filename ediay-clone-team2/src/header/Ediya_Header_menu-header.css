@@ -1,9 +1,10 @@
 /* 2026/08/05 */
-/* css 파일 */
+/* Ediya_Header_menu-header.css 파일 */
 
+/* 🟨 [수정] 고정 80% 대신 최대 너비 사용 */
 .menu-header {
-  width: 80%;
-  margin: 0 auto; /* menu-header 자체를 가운데 정렬 */
+  width: min(1200px, 92%);
+  margin: 0 auto;
 }
 
 .menu {
@@ -13,6 +14,13 @@
   gap: 20px;
 }
 
+.menu-category {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
 .menu-category > a {
   display: inline-block;
   padding: 15px 0 8px;
@@ -20,22 +28,11 @@
   /* 밑줄 공간을 미리 확보 */
   border-bottom: 3px solid transparent;
 
+  color: black;
   transition: border-color 0.3s ease;
 }
 
-.menu-category {
-  display: block;
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-  
-}
-
-.menu-category a{
-  color: black;
-}
-
-.menu-category ul a{
+.menu-category ul a {
   color: gray;
 }
 
@@ -59,9 +56,13 @@
 .sub a {
   display: block;
   padding: 4px 0;
+  font-weight: 400;
+  transition:
+    color 0.2s ease,
+    font-weight 0.2s ease;
 }
 
-/* menu에 hover하면 모든 sub가 아래로 펼쳐짐 */
+/* PC에서는 menu에 hover하면 모든 sub가 아래로 펼쳐짐 */
 .menu:hover .sub {
   max-height: 300px;
   margin-top: 15px;
@@ -71,21 +72,80 @@
   pointer-events: auto;
 }
 
-/* 하위 메뉴 링크 */
-.sub a {
-  font-weight: 400;
-  transition:
-    color 0.2s ease,
-    font-weight 0.2s ease;
-}
-
-/* 각각의 하위 메뉴 링크에 hover */
 .sub a:hover {
   color: black;
   font-weight: 700;
 }
 
-/* 현재 가리키는 카테고리의 제목에만 밑줄 표시 */
+/* 현재 가리키는 카테고리 제목에만 밑줄 표시 */
 .menu-category:hover > a {
   border-bottom-color: black;
+}
+
+/* 🟩 [추가] 태블릿에서는 메뉴 간격과 글자 크기를 축소 */
+@media (max-width: 1024px) {
+  .menu-header {
+    width: 96%;
+  }
+
+  .menu {
+    gap: 8px;
+  }
+
+  .menu-category > a {
+    font-size: 14px;
+  }
+
+  .sub a {
+    font-size: 13px;
+  }
+}
+
+/* 🟩 [추가] 모바일에서는 햄버거 버튼으로 전체 메뉴 열기/닫기 */
+@media (max-width: 768px) {
+  .menu-header {
+    display: none;
+    width: 100%;
+    padding: 0 16px 16px;
+    border-top: 1px solid #eee;
+    background-color: white;
+  }
+
+  /* React state가 open 클래스를 붙였을 때만 메뉴 표시 */
+  .menu-header.open {
+    display: block;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menu-category {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-category > a {
+    display: block;
+    padding: 14px 4px;
+    border-bottom: 0;
+    font-weight: 700;
+  }
+
+  /* 모바일에서는 하위 메뉴를 기본 표시하여 터치로 확인 가능 */
+  .sub,
+  .menu:hover .sub {
+    max-height: none;
+    margin: 0;
+    padding: 0 4px 10px 14px;
+
+    opacity: 1;
+    overflow: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .sub a {
+    padding: 6px 0;
+  }
 }
